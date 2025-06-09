@@ -1,0 +1,21 @@
+
+🌓 Dark Mode Theme – Readability & Accessibility Notes
+
+1. Reduced Eye Strain:
+Dark mode minimizes screen brightness and glare, helping reduce eye strain during night or extended use.
+
+2. Improved Readability:
+By using high-contrast light text on a dark background, it improves reading comfort and focus in low-light environments.
+
+3. Battery Efficiency:
+On OLED/AMOLED screens, dark mode saves battery by turning off black pixels.
+
+4. Accessibility Compliance:
+Meets WCAG (Web Content Accessibility Guidelines) standards, making content more accessible to users with low vision or sensitivity to light.
+
+5. User Comfort & Control:
+Dark mode gives users with photophobia or visual challenges the freedom to switch to a mode that suits their environment and comfort.
+
+Conclusion:
+Dark mode enhances inclusivity, comfort, and visual performance, making it a critical part of accessible modern design.
+

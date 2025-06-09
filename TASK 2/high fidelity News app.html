@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News App - Light and Dark Mode</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --accent-color: #0066cc;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --accent-color: #3399ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+      padding: 1rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .toggle-button {
+      background-color: var(--accent-color);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .article {
+      margin: 1rem 0;
+      padding: 1rem;
+      background-color: rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+
+    [data-theme="dark"] .article {
+      background-color: rgba(255,255,255,0.05);
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .explanation {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-left: 4px solid #0066cc;
+    }
+
+    [data-theme="dark"] .explanation {
+      background-color: #1e1e1e;
+      border-left-color: #3399ff;
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header>
+    <h1>🗞️ News App</h1>
+    <button class="toggle-button" onclick="toggleTheme()">Toggle Dark Mode</button>
+  </header>
+
+  <div class="article">
+    <h2>City Celebrates Environmental Day</h2>
+    <p>Thousands of residents took part in tree planting campaigns and awareness rallies. The event was marked by community efforts to reduce pollution and promote sustainability.</p>
+  </div>
+
+  <div class="article">
+    <h2>Tech Conference 2025 Highlights</h2>
+    <p>Startups from across the country showcased cutting-edge innovations in AI, blockchain, and green energy. Keynote speakers emphasized the role of ethical technology in shaping the future.</p>
+  </div>
+
+  <div class="explanation">
+    <h3>🌓 Accessibility and Readability</h3>
+    <p>
+      The dark mode ensures comfortable reading at night and reduces eye strain by using high-contrast light text on a dark background. It meets WCAG contrast standards for accessible content and helps users in low-light environments stay focused.
+    </p>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.body.getAttribute('data-theme');
+      document.body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+    }
+  </script>
+</body>
+</html>
