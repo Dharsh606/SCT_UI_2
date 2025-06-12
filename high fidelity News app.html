@@ -1,102 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News App - Light and Dark Mode</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DNews | Daily News App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-color: #ffffff;
-      --text-color: #000000;
-      --accent-color: #0066cc;
+      --bg-color: #f9fafe;
+      --text-color: #1a1a1a;
+      --card-bg: #ffffffcc;
+      --accent-color: #005fcc;
+      --section-title: #003366;
+      --footer-bg: #e9eff6;
     }
 
     [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
+      --bg-color: #101418;
+      --text-color: #e4e4e4;
+      --card-bg: #1e1e1ecc;
       --accent-color: #3399ff;
+      --section-title: #80cfff;
+      --footer-bg: #1a1f25;
+    }
+
+    * {
+      box-sizing: border-box;
+      transition: background 0.3s, color 0.3s;
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      transition: background 0.3s, color 0.3s;
-      padding: 1rem;
+      padding: 2rem;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
     }
 
     .toggle-button {
       background-color: var(--accent-color);
       color: #fff;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 30px;
+      font-size: 1rem;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--section-title);
     }
 
     .article {
-      margin: 1rem 0;
-      padding: 1rem;
-      background-color: rgba(0,0,0,0.05);
-      border-radius: 8px;
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1.5rem;
     }
 
-    [data-theme="dark"] .article {
-      background-color: rgba(255,255,255,0.05);
-    }
-
-    h2 {
+    .article h2 {
+      font-size: 1.3rem;
       margin-top: 0;
+      color: var(--accent-color);
     }
 
-    .explanation {
-      margin-top: 2rem;
-      padding: 1rem;
-      background-color: #f9f9f9;
-      border-left: 4px solid #0066cc;
+    .footer {
+      padding: 2rem;
+      background-color: var(--footer-bg);
+      text-align: center;
+      border-radius: 10px;
     }
 
-    [data-theme="dark"] .explanation {
-      background-color: #1e1e1e;
-      border-left-color: #3399ff;
+    .footer input {
+      padding: 0.7rem;
+      width: 240px;
+      border-radius: 8px;
+      border: none;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .footer button {
+      padding: 0.7rem 1.2rem;
+      background-color: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      .toggle-button {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+      }
+
+      .footer input {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .footer button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body data-theme="light">
   <header>
-    <h1>🗞️ News App</h1>
-    <button class="toggle-button" onclick="toggleTheme()">Toggle Dark Mode</button>
+    <h1>🗞️ DNews</h1>
+    <button class="toggle-button" onclick="toggleTheme()">
+      <span id="theme-icon">🌙</span> Toggle Mode
+    </button>
   </header>
 
-  <div class="article">
-    <h2>City Celebrates Environmental Day</h2>
-    <p>Thousands of residents took part in tree planting campaigns and awareness rallies. The event was marked by community efforts to reduce pollution and promote sustainability.</p>
-  </div>
+  <section>
+    <div class="section-title">Top Stories</div>
+    <div class="article">
+      <h2>🌿 India Celebrates Massive Green Drive</h2>
+      <p>Over 1 million saplings were planted across states as part of World Environment Day, aiming to combat urban pollution and encourage biodiversity.</p>
+    </div>
+    <div class="article">
+      <h2>🏏 India Enters T20 Finals with Stunning Win</h2>
+      <p>Fans celebrated wildly as India stormed into the T20 World Cup finals after a nail-biting finish against Australia in Mumbai.</p>
+    </div>
+  </section>
 
-  <div class="article">
-    <h2>Tech Conference 2025 Highlights</h2>
-    <p>Startups from across the country showcased cutting-edge innovations in AI, blockchain, and green energy. Keynote speakers emphasized the role of ethical technology in shaping the future.</p>
-  </div>
+  <section>
+    <div class="section-title">Technology</div>
+    <div class="article">
+      <h2>🤖 AI Startups Lead Innovation in 2025</h2>
+      <p>From AI-driven healthcare to robotics, Indian startups showcased futuristic solutions at the National Tech Fair held in Bengaluru.</p>
+    </div>
+    <div class="article">
+      <h2>💻 Google Launches Lightweight OS for India</h2>
+      <p>With a focus on rural connectivity and offline-first design, Google’s new OS aims to bridge the digital divide in remote areas.</p>
+    </div>
+  </section>
 
-  <div class="explanation">
-    <h3>🌓 Accessibility and Readability</h3>
-    <p>
-      The dark mode ensures comfortable reading at night and reduces eye strain by using high-contrast light text on a dark background. It meets WCAG contrast standards for accessible content and helps users in low-light environments stay focused.
-    </p>
-  </div>
+  <section>
+    <div class="section-title" >World News</div>
+    <div class="article">
+      <h2>🌍 UN Declares Global Climate Emergency</h2>
+      <p>The UN has called for immediate action as carbon levels reach record highs. Countries are urged to commit to net-zero emissions by 2035.</p>
+    </div>
+    <div class="article" datasos="fadeup">
+      <h2>🇺🇸 US Markets Rally as Fed Holds Interest Rates</h2>
+      <p>Stock markets saw gains after the Federal Reserve announced it will pause rate hikes to support economic stability.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title" datasos="fadeup">Opinions</div>
+    <div class="article">
+      <h2>🧠 Why We Need AI Ethics More Than Ever</h2>
+      <p>As AI integrates into daily life, it’s crucial to set up ethical frameworks to prevent misuse and ensure human-centric innovation.</p>
+    </div>
+    <div class="article">
+      <h2>⚖️ Freedom of Press in the Digital Age</h2>
+      <p>With censorship laws tightening globally, what does the future look like for digital journalism and media independence?</p>
+    </div>
+  </section>
+
+  <section class="footer" datasos="fadeup">
+    <h2>📬 Subscribe to Our Newsletter</h2>
+    <p>Stay updated with daily headlines and expert insights.</p>
+    <input type="email" placeholder="Enter your email" />
+    <button>Subscribe</button>
+  </section>
 
   <script>
     function toggleTheme() {
-      const currentTheme = document.body.getAttribute('data-theme');
-      document.body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+      document.getElementById('theme-icon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
     }
   </script>
 </body>
